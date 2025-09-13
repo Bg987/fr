@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f8fb;
+    margin: 0;
+    padding: 0;
+}
+.container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+h1 {
+    text-align: center;
+    color: #2a5d84;
+}
+#location-info, #tide-info, #alert-section, #current-time {
+    margin-bottom: 20px;
+}
+#alert-section button {
+    margin-right: 10px;
+    padding: 8px 16px;
+    border: none;
+    background: #2a5d84;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+#alert-section button:hover {
+    background: #1b3c57;
+}
+#map {
+    border-radius: 8px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.07);
+}
