@@ -24,7 +24,7 @@ window.onload = () => {
 
         // Fetch nearest coast from backend
         try {
-          const url = `http://localhost:3000/nearest-coast?lat=${lat}&lon=${lon}`;
+          const url = `https://backd-splz.onrender.com/nearest-coast?lat=${lat}&lon=${lon}`;
           const res = await fetch(url);
           const data = await res.json();
             console.log(data);
