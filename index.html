@@ -1,40 +1,25 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>User Location Test</title>
+  <meta charset="UTF-8" />
+  <title>User Location & Nearest Coast</title>
+
+  <!-- Leaflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+  <style>
+    #map { height: 80vh; width: 100%; }
+  </style>
 </head>
-
 <body>
-    <h2>User Location</h2>
-    <p id="location">Fetching location...</p>
+  <h2>User Location & Nearest Coast</h2>
+  <p id="location">Fetching location...</p>
+  <p id="coast">Nearest coast: Fetching...</p>
 
-    <script>
-        if ("geolocation" in navigator) {
-            navigator.geolocation.getCurrentPosition(
-                (position) => {
-                    const lat = position.coords.latitude;
-                    const lon = position.coords.longitude;
-                    document.getElementById("location").innerText =
-                        "Latitude: " + lat + ", Longitude: " + lon;
-                    getNearestCoast(lat, lon)
-                },
-                (error) => {
-                    document.getElementById("location").innerText =
-                        "Error " + error.code + ": " + error.message;
-                }
-            );
-        } else {
-            document.getElementById("location").innerText =
-                "Geolocation not supported by this browser.";
-        }
-        async function getNearestCoast(lat, lon) {
-            const url = `http://localhost:3000/nearest-coast?lat=${lat}&lon=${lon}`;
-            const res = await fetch(url);
-            const data = await res.json();
-            alert("coast data:", JSON.stringify(data));
-        }
-    </script>
+  <!-- Map container -->
+  <div id="map"></div>
+
+  <!-- Leaflet JS -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="script.js"></script>
 </body>
-
 </html>
