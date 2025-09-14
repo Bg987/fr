@@ -10,10 +10,10 @@ window.onload = () => {
   if ("geolocation" in navigator) {
     navigator.geolocation.getCurrentPosition(
       async (position) => {
-        //const lat = position.coords.latitude;
-        //const lon = position.coords.longitude;
-        const lat = 20.8880;
-        const lon = 70.4013;
+        const lat = position.coords.latitude;
+        const lon = position.coords.longitude;
+        //const lat = 20.8880;
+        //const lon = 70.4013;
         // Show user location in text
         document.getElementById("location").innerText =
           `Latitude: ${lat}, Longitude: ${lon}`;
