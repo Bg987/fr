@@ -26,14 +26,13 @@ window.onload = () => {
         //http://localhost:3000/nearest-coast?lat=${lat}&lon=${lon}
         // Fetch nearest coast from backend
         try {
-          const url = `http://localhost:3000/nearest-coast?lat=${lat}&lon=${lon}`;
+          const url = `https://backd-splz.onrender.com/nearest-coast?lat=${lat}&lon=${lon}`;
           const res = await fetch(url);
           const data = await res.json();
             console.log(data);
           if (data && data.coastLat && data.coastLon) {
             document.getElementById("coast").innerText =
             `Nearest coast: Latitude ${data.coastLat}, Longitude ${data.coastLon} distance ${data.distance_km}`;
-            alert(``)
             // Place coast marker
             const coastMarker = L.marker([data.coastLat, data.coastLon], {
               icon: L.icon({
