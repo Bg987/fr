@@ -90,11 +90,11 @@ window.onload = () => {
 
       if (next) {
         document.getElementById("nextHighTime").innerText =
-          `Next High Tide: ${next.nextHigh.time.toLocaleString()} \n Height: ${next.nextHigh.height} m`;
+          `${next.nextHigh.time.toLocaleString()} \n Height: ${next.nextHigh.height} m`;
         startCountdown(next.nextHigh.time, "highCountdown");
 
         document.getElementById("nextLowTime").innerText =
-          `Next Low Tide: ${next.nextLow.time.toLocaleString()} \n Height: ${next.nextLow.height} m`;
+          `${next.nextLow.time.toLocaleString()} \n Height: ${next.nextLow.height} m`;
         startCountdown(next.nextLow.time, "lowCountdown");
       }
 
