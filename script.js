@@ -30,7 +30,7 @@ window.onload = () => {
 
           try {
             // Call backend API once
-            const url = `https://backd-splz.onrender.com/nearest-coast?lat=${lat}&lon=${lon}`;
+            const url = `https://backd-1.onrender.com/nearest-coast?lat=${lat}&lon=${lon}`;
             const res = await fetch(url);
             const data = await res.json();
 
