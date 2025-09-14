@@ -1,27 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <title>User Location & Nearest Coast</title>
+  <title>Tide Tracker</title>
+  <link rel="stylesheet" href="index.css">
+  <!-- Le4444aflet CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 
-  <!-- Leaflet CSS -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
   <style>
-    #map { height: 80vh; width: 100%; }
+  
   </style>
 </head>
-<body>
-  <h2>User Location & Nearest Coast</h2>
-  <input type="text" id = "lat" placeholder="Enter Latitude">
-  <input type="text" id = "lon" placeholder="Enter Longatude">
-  <p id="location">Fetching location...</p>
-  <p id="coast">Nearest coast: Fetching...</p>
 
-  <!-- Map container -->
-  <div id="map"></div>
+<body>
+  <div class="container">
+    <!-- Left side -->
+    <div class="map-section">
+      <div id="map"></div>
+    </div>
+
+    <!-- Right side -->
+    <div class="info-section">
+      <h1>Tide Tracker 🌊</h1>
+
+      <div class="info" id="location">Fetching your location...</div>
+      <div class="info" id="coast">Finding nearest coast...</div>
+
+      <div class="tide-card">
+        <div>
+          <h3>Next High Tide</h3>
+          <p id="nextHighTime">--</p>
+        </div>
+        <div class="countdown" id="highCountdown">--</div>
+      </div>
+
+      <div class="tide-card">
+        <div>
+          <h3>Next Low Tide</h3>
+          <p id="nextLowTime">--</p>
+        </div>
+        <div class="countdown" id="lowCountdown">--</div>
+      </div>
+    </div>
+  </div>
 
   <!-- Leaflet JS -->
   <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <script src="script.js"></script>
 </body>
+
 </html>
