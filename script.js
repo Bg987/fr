@@ -27,6 +27,7 @@ window.onload = () => {
         async (position) => {
           const lat = position.coords.latitude;
           const lon = position.coords.longitude;
+          
           try {
             // Call backend API once
             const url = `https://backd-4g2l.onrender.com/nearest-coast?lat=${lat}&lon=${lon}`;
