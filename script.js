@@ -95,6 +95,12 @@ window.onload = () => {
 
         document.getElementById("nextLowTime").innerText =
           `${next.nextLow.time.toLocaleString()} \n Height: ${next.nextLow.height} m`;
+
+          `Next High Tide: ${next.nextHigh.time.toLocaleString()} \n Height: ${next.nextHigh.height} m`;
+        startCountdown(next.nextHigh.time, "highCountdown");
+
+        document.getElementById("nextLowTime").innerText =
+          `Next Low Tide: ${next.nextLow.time.toLocaleString()} \n Height: ${next.nextLow.height} m`;
         startCountdown(next.nextLow.time, "lowCountdown");
       }
 
